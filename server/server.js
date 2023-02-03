@@ -18,8 +18,6 @@ import { MongoClient, ServerApiVersion } from 'mongodb'
 //});
 
 
-dotenv.config()
-
 
 const configuration = new Configuration({
   apiKey: "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",
