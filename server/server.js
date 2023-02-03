@@ -4,7 +4,7 @@ import cors from 'cors'
 import { Configuration, OpenAIApi } from 'openai'
 import { MongoClient, ServerApiVersion } from 'mongodb'
 
-
+dotenv.config()
 
 const configuration = new Configuration({
   apiKey:  process.env.OPENAI_API_KEY,
