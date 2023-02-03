@@ -18,6 +18,7 @@ import { MongoClient, ServerApiVersion } from 'mongodb'
 //});
 
 
+dotenv.config()
 
 
 const configuration = new Configuration({
