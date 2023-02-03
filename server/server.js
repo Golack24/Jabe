@@ -18,8 +18,8 @@ import { MongoClient, ServerApiVersion } from 'mongodb'
 //});
 
 
+dotenv.config()
 
-dotenv.config({path: '/etc/secrets/.env'})
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
