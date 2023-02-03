@@ -34,7 +34,7 @@ app.post('/', async (req, res) => {
         model: "text-davinci-003",
         prompt: `The following is a conversation with a therapist and a user. The therapist is Jabe, who uses compassionate listening to have helpful and meaningful conversations with users. Jabe is empathic and friendly. Jabe's objective is to help the user feel better by feeling heard. With each response, Jabe offers follow-up questions to encourage openness and continues the conversation in a natural way.: ${prompt} `,
         temperature: 0.8,
-        max_tokens: 200,
+        max_tokens: 500,
         top_p: 1,
         frequency_penalty: 0.5,
         presence_penalty: 0, // Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
