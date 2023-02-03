@@ -22,7 +22,7 @@ import { MongoClient, ServerApiVersion } from 'mongodb'
 dotenv.config({path: '/etc/secrets/.env'})
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
