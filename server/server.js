@@ -6,19 +6,6 @@ import { MongoClient, ServerApiVersion } from 'mongodb'
 
 
 
-//const uri = "mongodb+srv://chatbot:fP4d1gVHkx3qX2jS@cluster0.nhdcw0w.mongodb.net/?retryWrites=true&w=majority";
-//const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-
-// client.connect(err => {
-  //if (err) {
-    //console.error(err);
-   // return;
- // }
- // db = client.db("test");
-//});
-
-
-
 const configuration = new Configuration({
   apiKey: "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",
 });
@@ -38,24 +25,10 @@ app.get('/', async (req, res) => {
 })
 
 
-//let db;
-
 app.post('/', async (req, res) => {
   try {
     const prompt = req.body.prompt;
 
-    //let context = '';
-
-
-
-
-    //const conversations = await db.collection('conversations')
-      //.find({})
-      //.toArray();
-    //if (conversations.length) {
-        // Construct the context string from the previous conversations
-      //context = conversations.map(c => c.userInput + ' ' + c.botResponse).join(' ');
-     // }
 
       const response = await openai.createCompletion({
         model: "text-davinci-003",
@@ -67,18 +40,6 @@ app.post('/', async (req, res) => {
         presence_penalty: 0, // Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
       });
 
-//\n\nPrevious conversations:\n\n${context}
-
-      //await db.collection('conversations').insertOne({
-        //userInput: prompt,
-       //botResponse: response.data.choices[0].text,
-        //timestamp: new Date()
-     // });
-
-      //console.log('Conversation stored in the database');
-     // res.status(200).send({
-        //bot: response.data.choices[0].text
-      //});
 
       res.status(200).send({
         bot: response.data.choices[0].text
