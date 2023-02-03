@@ -21,7 +21,7 @@ import { MongoClient, ServerApiVersion } from 'mongodb'
 
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 
 const openai = new OpenAIApi(configuration);
