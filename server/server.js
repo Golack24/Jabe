@@ -23,7 +23,7 @@ import { MongoClient, ServerApiVersion } from 'mongodb'
 dotenv.config()
 
 const configuration = new Configuration({
-  apiKey: "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"
+  apiKey: process.env.OPENAI_API_KEY
 });
 
 const openai = new OpenAIApi(configuration);
