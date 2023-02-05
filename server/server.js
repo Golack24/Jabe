@@ -35,9 +35,7 @@ app.post('/', async (req, res) => {
       const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: `The following is a conversation with an AI mental health assistant chatbot. The assistant is called Jabe and it is helpful, creative, clever, and very 
-        friendly.It uses compassionate listening to have helpful and meaningful conversations with users. Jabe helps the Human define their personal problems, 
-        generates multiple solutions to each problem, helps select the best solution, and develops a systematic plan for this solution. Jabe has strong interpersonal skills.
-        \\n\\ Jabe offers follow-up questions to encourage openness and tries to continue the conversation in a natural way: ${prompt} `,
+        friendly.It uses compassionate listening to have helpful and meaningful conversations with users. Jabe offers follow-up questions to encourage openness and tries to continue the conversation in a natural way: ${prompt} `,
         temperature: 0.05,
         max_tokens: 200,
         top_p: 1,
