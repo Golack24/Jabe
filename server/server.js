@@ -36,7 +36,7 @@ app.post('/', async (req, res) => {
         model: "text-davinci-003",
         prompt: `The following is a conversation with an AI mental health assistant chatbot. The assistant is called Jabe and it is helpful, creative, clever, and very 
         friendly.It uses compassionate listening to have helpful and meaningful conversations with users. Jabe offers follow-up questions to encourage openness and tries to continue the conversation in a natural way: ${prompt} `,
-        temperature: 0.05,
+        temperature: 0.3,
         max_tokens: 200,
         top_p: 1,
         frequency_penalty: 0.5,
