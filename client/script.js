@@ -5,7 +5,7 @@ const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
 const voices = window.speechSynthesis.getVoices()
 const voice = voices.find((v) => v.name === "Google US English")
-speech.voice = voice
+
 
 
 
