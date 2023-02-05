@@ -72,7 +72,8 @@ const handleSubmit = async (e) => {
     e.preventDefault()
 
     const data = new FormData(form)
-    const startingMessage = "Welcome to the chatbot! How can I help you today?";
+
+
 
     // user's chatstripe
     chatContainer.innerHTML += chatStripe(false, data.get('prompt'))
