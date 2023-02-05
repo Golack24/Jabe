@@ -3,7 +3,10 @@ import user from './assets/user.svg'
 
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
-const startingMessage = "Hi there! How can I help you today?";
+const voices = window.speechSynthesis.getVoices();
+const voice = voices.find((v) => v.name === "Google US English");
+speech.voice = voice;
+
 
 
 let loadInterval
@@ -69,6 +72,7 @@ const handleSubmit = async (e) => {
     e.preventDefault()
 
     const data = new FormData(form)
+    const startingMessage = "Welcome to the chatbot! How can I help you today?";
 
     // user's chatstripe
     chatContainer.innerHTML += chatStripe(false, data.get('prompt'))
@@ -79,6 +83,7 @@ const handleSubmit = async (e) => {
     // bot's chatstripe
     const uniqueId = generateUniqueId()
     chatContainer.innerHTML += chatStripe(true, " ", uniqueId)
+
 
     // to focus scroll to the bottom 
     chatContainer.scrollTop = chatContainer.scrollHeight;
@@ -107,6 +112,9 @@ const handleSubmit = async (e) => {
         const parsedData = data.bot.trim() // trims any trailing spaces/'\n' 
 
         typeText(messageDiv, parsedData)
+         // Generate speech from the bot's response
+        const speech = new SpeechSynthesisUtterance(parsedData);
+    window.speechSynthesis.speak(speech);
     } else {
         const err = await response.text()
 
