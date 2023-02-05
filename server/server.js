@@ -3,11 +3,12 @@ import * as dotenv from 'dotenv'
 import cors from 'cors'
 import { Configuration, OpenAIApi } from 'openai'
 import fs from 'fs'
+import util from 'util'
 
 
 dotenv.config()
 
-const util = require('util');
+
 const writeFile = util.promisify(fs.writeFile);
 const readFile = util.promisify(fs.readFile);
 
