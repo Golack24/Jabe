@@ -35,6 +35,12 @@ app.get('/', async (req, res) => {
 app.post('/', async (req, res) => {
   try {
     const prompt = req.body.prompt;
+    let conversationHistory = ''; // Get previous convo history
+    try {
+      conversationHistory = await readFile('conversation-history.txt', 'utf-8');
+    } catch (error) {
+      console.error(error);
+    }
 
 
       const response = await openai.createCompletion({
@@ -44,8 +50,8 @@ app.post('/', async (req, res) => {
         compassionate listening to have helpful and meaningful conversations with users. Jabe helps 
         the Human define their personal problems, generates multiple solutions to each problem, helps 
         select the best solution, and develops a systematic plan for this solution. Jabe has strong 
-        interpersonal skills.\\n\\ Jabe offers follow-up questions to encourage openness and tries to 
-        continue the conversation in a natural way: ${prompt} `,
+        interpersonal skills.Jabe offers follow-up questions to encourage openness and tries to 
+        continue the conversation in a natural way:${conversationHistory}\n ${prompt} `,
         temperature: 0.05,
         max_tokens: 200,
         top_p: 1,
