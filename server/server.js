@@ -7,7 +7,6 @@ import fs from 'fs'
 
 dotenv.config()
 
-const fs = require('fs');
 const util = require('util');
 const writeFile = util.promisify(fs.writeFile);
 const readFile = util.promisify(fs.readFile);
@@ -37,7 +36,7 @@ app.post('/', async (req, res) => {
     const prompt = req.body.prompt;
     let conversationHistory = ''; // Get previous convo history
     try {
-      conversationHistory = await readFile('conversation-history.txt', 'utf-8');
+      conversationHistory = await readFile('conversation-history.txt', 'utf-8'); // reads contents of the file 
     } catch (error) {
       console.error(error);
     }
