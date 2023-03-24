@@ -63,7 +63,7 @@ app.post('/', async (req, res) => {
 
 
       res.status(200).send({
-        bot: response.data.choices[0].text.replace("AI:", "")
+        bot: response.data.choices[0].text.replace("Jabe:", "")
       });
 
     } catch (error) {
