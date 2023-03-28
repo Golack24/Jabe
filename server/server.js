@@ -13,7 +13,10 @@ fs.createReadStream('depression.csv')
   })
   .on('end', () => {
     console.log('CSV file successfully processed')
-  });
+
+  fs.writeFileSync('data.json', JSON.stringify(jsonData));
+});
+
   
   
 
