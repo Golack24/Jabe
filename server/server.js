@@ -12,7 +12,7 @@ const jsonData = [];
 fs.createReadStream('depression.csv')
   .pipe(csv())
   .on('depression', (row) => {
-    console.log(row);
+    jsonData.push(row);
   })
   .on('end', () => {
     console.log('CSV file successfully processed')
