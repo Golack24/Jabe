@@ -5,6 +5,7 @@ import { Configuration, OpenAIApi } from 'openai'
 import fs from 'fs'
 import util from 'util'
 import csvtojson from 'csvtojson'
+import csv from 'csv-parser'
 
 const jsonData = [];
 
