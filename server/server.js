@@ -6,6 +6,8 @@ import fs from 'fs'
 import util from 'util'
 import csvtojson from 'csvtojson'
 
+const jsonData = [];
+
 fs.createReadStream('depression.csv')
   .pipe(csv())
   .on('depression', (row) => {
